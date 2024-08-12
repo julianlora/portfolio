@@ -1,0 +1,163 @@
+
+
+
+
+.modal-content{
+    border-radius: 0%;
+}
+
+.modal-body{
+    padding: 5px;
+}
+
+.modal-body img{
+    max-height: 80vh;
+    width: 100%;
+}
+
+.portada-seccion{
+    /* max-height: 500px;
+    overflow: hidden; */
+}
+
+#portada{
+    height: 520px;
+    width: 100%;
+    background-image: url(imagenes/batman.png);
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.poster{
+    display: flex;
+    align-items: center;
+    height: 520px;
+    overflow: hidden;
+}
+
+.video{
+    width: 100%;
+}
+
+
+
+.seccion-titulo{
+    font-size: 30px;
+    font-weight: 600;
+    padding-bottom: 25px;
+}
+
+.skills{
+    padding-bottom: 20px;
+}
+
+
+.skills span{
+    background-color: #d9d9d9;
+    padding: 8px 20px 8px 20px;
+    line-height: 45px;
+    margin-right: 10px;
+    border-radius: 8px;
+    /* border: 1px solid #000; */
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.skills span:hover{
+    background-color: grey;
+}
+
+.filtrando{
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.proyecto-cont{
+    padding: 20px 25px 0px 25px;
+}
+
+.proyectos{
+    /* border:1px solid red; */
+    max-height: calc(100vh - 146px);
+    overflow-y: auto;
+}
+
+.proyecto{
+    display: flex;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+    height: 388px;
+}
+
+.portada-proyecto{
+    background-position:top; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-width: 430px;
+    margin-right: 25px;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+}
+
+.proyecto-info{
+    width: 100%;    
+}
+
+.proyecto-logo{
+    /* height: 100px;
+    width: 100px; */
+    background-position:center; 
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.proyecto-encabezado{
+    width: 100%;
+    align-content: center;
+}
+
+.titulo{
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.proyecto a{
+    color: grey;
+}
+
+.proyecto a:hover{
+    color: #000;
+}
+
+.iconos{
+    /* margin-bottom: 20px; */
+}
+
+.descripcion{
+    padding-bottom: 20px;
+}
+
+.proyecto-imagenes{
+    /* width: 100%; */
+}
+
+.proyecto-img{
+    background-position:top; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20vh;
+    width: 25vh;
+    margin-right: 20px;
+    border: 1px solid #d9d9d9;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.proyecto-img:hover{
+    transform: scale(1.08); 
+}
