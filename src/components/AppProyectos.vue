@@ -28,13 +28,14 @@
                 </div>
             </div>
 
-            <div class="proyectos row">
-                <AppProyecto v-if="mostrarComponente"
+            <div class="proyectos row" :key="refresh">
+                <AppProyecto
                     nombre="Casa Perez"
                     imagen="imagenes/casaperez.png"
                     descripcion="E-commerce personalizado desarrollado para control de stock y ventas. Contenido administrable de forma dinámica. Zona privada. Carrito. Tipos de envío. Medios de pago. Integración con Mercado Pago. Actualización masiva de productos mediante excel. Generación de archivos xml para integración con Electrobase."
                     link="https://d1.osole.com.ar/casaperez/public/"
                     :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql', 'mp']"
+                    :col="vista"
                     >
                 </AppProyecto>
 
@@ -44,6 +45,7 @@
                     descripcion="Página web con contenido gestionable de forma dinámica. Imágenes, videos, contacto y solicitudes de presupuesto."
                     link="https://pmr.com.ar/"
                     :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql']"
+                    :col="vista"
                     >
                 </AppProyecto>
 
@@ -53,6 +55,7 @@
                     descripcion="Página web con contenido gestionable de forma dinámica. Imágenes, videos, contacto y solicitudes de presupuesto."
                     link="https://www.andeselevadores.com.ar/"
                     :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql']"
+                    :col="vista"
                     >
                 </AppProyecto>
 
@@ -63,17 +66,20 @@
 
 <script>
 import AppProyecto from './AppProyecto.vue';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+// import AppProyectoMosaico from './AppProyectoMosaico.vue';
+// import AOS from 'aos';
+// import 'aos/dist/aos.css';
 
 export default {
     name: 'AppProyectos',
     components:{
         AppProyecto,
+        // AppProyectoMosaico,
     },
     data() {
         return {
-            mostrarComponente: true // Inicialmente se muestra el componente
+            vista: 'list',
+            refresh: 0,
         };
     },
     methods: {
@@ -84,18 +90,11 @@ export default {
                     icon.classList.toggle('selected');
                 });
                 // document.querySelectorAll('.proyecto').forEach((proyecto) => {
-                //     proyecto.classList.toggle('col-12');
-                //     proyecto.classList.toggle('col-6');
+                //     proyecto.style.display = 'none';
                 // });
             }
-            document.querySelectorAll('.proyecto').forEach((proyecto) => {
-                proyecto.style.display = 'none';
-            });
-            AOS.refreshHard();
-            document.querySelectorAll('.proyecto').forEach((proyecto) => {
-                proyecto.style.display = 'flex';
-            });
-            this.mostrarComponente = !this.mostrarComponente;
+            this.vista = type;
+            this.refresh += 1;
         }
     }
 }

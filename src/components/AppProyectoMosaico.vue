@@ -1,5 +1,5 @@
 <template>
-    <div :class="['proyecto', { 'col-12': col === 'list' }, {'col-3': col !== 'list' }]" data-aos='fade-up' data-skills="PHP Laravel HTML CSS Bootstrap JavaScript MySQL Ajax JQuery">       
+    <div class="proyecto col-6" data-aos='fade-up' data-skills="PHP Laravel HTML CSS Bootstrap JavaScript MySQL Ajax JQuery">
         <div class="portada-proyecto" :style="{ backgroundImage: `url(${imagen})` }"></div>
         <div class='proyecto-info'>
             <div class='d-flex'>
@@ -45,7 +45,7 @@
 <script>
 export default {
     name: 'AppProyecto',
-    props: ['nombre', 'imagen', 'descripcion', 'link', 'tecnologias', 'col'],
+    props: ['nombre', 'imagen', 'descripcion', 'link', 'tecnologias']
 }
 </script>
 
