@@ -37,6 +37,7 @@
                         link="https://d1.osole.com.ar/casaperez/public/"
                         :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql', 'mp']"
                         :vista="vista"
+                        fecha='2025'
                         >
                     </AppProyecto>
 
@@ -47,6 +48,7 @@
                         link="https://pmr.com.ar/"
                         :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql']"
                         :vista="vista"
+                        fecha="2024"
                         >
                     </AppProyecto>
 
@@ -57,6 +59,7 @@
                         link="https://www.andeselevadores.com.ar/"
                         :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql']"
                         :vista="vista"
+                        fecha="2023"
                         >
                     </AppProyecto>
 
@@ -67,6 +70,7 @@
                         link="https://d1.osole.com.ar/casaperez/public/"
                         :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql', 'mp']"
                         :vista="vista"
+                        fecha="2023"
                         >
                     </AppProyecto>
 
@@ -77,6 +81,7 @@
                         link="https://pmr.com.ar/"
                         :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql']"
                         :vista="vista"
+                        fecha="2021"
                         >
                     </AppProyecto>
 
@@ -87,6 +92,7 @@
                         link="https://www.andeselevadores.com.ar/"
                         :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql']"
                         :vista="vista"
+                        fecha="2021"
                         >
                     </AppProyecto>
 
@@ -101,6 +107,10 @@ import AppProyecto from './AppProyecto.vue';
 // import AppProyectoMosaico from './AppProyectoMosaico.vue';
 // import AOS from 'aos';
 // import 'aos/dist/aos.css';
+import 'overlayscrollbars/overlayscrollbars.css';
+import { 
+  OverlayScrollbars, 
+} from 'overlayscrollbars';
 
 export default {
     name: 'AppProyectos',
@@ -113,6 +123,28 @@ export default {
             vista: 'list',
             refresh: 0,
         };
+    },
+    mounted() {
+        OverlayScrollbars(document.querySelector('#scrollable'), {
+        scrollbars: {
+            clickScrolling : true,
+            theme: 'os-theme-dark',
+        },
+        overflow: {
+            x: 'hidden',
+            y: 'scroll',
+        },
+        });
+
+        const handle = document.querySelector('.os-scrollbar-vertical .os-scrollbar-handle')
+        var element = `
+        <div class='scrollbar-tag'>
+            asdas
+        </div>
+        `
+        handle.insertAdjacentHTML('beforeend', element)
+
+        
     },
     methods: {
         displayChange(event, type) {
@@ -172,5 +204,6 @@ export default {
 .row{
     margin-left: 0 !important;
 }
+
 
 </style>

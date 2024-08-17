@@ -1,5 +1,5 @@
 <template>
-    <div v-if="vista==='list'" :class="['proyecto', { 'col-12': vista === 'list' }, {'col-3': vista !== 'list' }]" data-skills="PHP Laravel HTML CSS Bootstrap JavaScript MySQL Ajax JQuery">       
+    <div v-if="vista==='list'" :class="['proyecto', { 'col-12': vista === 'list' }, {'col-3': vista !== 'list' }]" :data-fecha="fecha" data-skills="PHP Laravel HTML CSS Bootstrap JavaScript MySQL Ajax JQuery">       
         <div class="portada-proyecto" :style="{ backgroundImage: `url(${imagen})` }"></div>
         <div class='proyecto-info'>
             <div class='d-flex'>
@@ -41,7 +41,7 @@
         </div>
     </div>
 
-    <div v-if="vista==='mosaic'" class='m-proyecto col-3' data-aos='fade-up'>
+    <div v-if="vista==='mosaic'" class='m-proyecto col-3' :data-fecha='fecha' data-aos='fade-up'>
         <div class='m-proyecto-margin'>
             <div class='m-portada' :style="{ backgroundImage: `url(${imagen})` }">
 
