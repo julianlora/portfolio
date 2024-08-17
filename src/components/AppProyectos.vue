@@ -27,38 +27,70 @@
                     <img class="selected display-icon list" src="imagenes/rows.png" @click="displayChange($event, 'list')">
                 </div>
             </div>
+            
+            <div id="scrollable">
+                <div class="proyectos row" :key="refresh" data-aos='fade-up'>
+                    <AppProyecto
+                        nombre="Casa Perez"
+                        imagen="imagenes/casaperez.png"
+                        descripcion="E-commerce personalizado desarrollado para control de stock y ventas. Contenido administrable de forma dinámica. Zona privada. Carrito. Tipos de envío. Medios de pago. Integración con Mercado Pago. Actualización masiva de productos mediante excel. Generación de archivos xml para integración con Electrobase."
+                        link="https://d1.osole.com.ar/casaperez/public/"
+                        :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql', 'mp']"
+                        :vista="vista"
+                        >
+                    </AppProyecto>
 
-            <div class="proyectos row" :key="refresh">
-                <AppProyecto
-                    nombre="Casa Perez"
-                    imagen="imagenes/casaperez.png"
-                    descripcion="E-commerce personalizado desarrollado para control de stock y ventas. Contenido administrable de forma dinámica. Zona privada. Carrito. Tipos de envío. Medios de pago. Integración con Mercado Pago. Actualización masiva de productos mediante excel. Generación de archivos xml para integración con Electrobase."
-                    link="https://d1.osole.com.ar/casaperez/public/"
-                    :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql', 'mp']"
-                    :col="vista"
-                    >
-                </AppProyecto>
+                    <AppProyecto
+                        nombre="PMR Industria"
+                        imagen="imagenes/pmr.png"
+                        descripcion="Página web con contenido gestionable de forma dinámica. Imágenes, videos, contacto y solicitudes de presupuesto."
+                        link="https://pmr.com.ar/"
+                        :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql']"
+                        :vista="vista"
+                        >
+                    </AppProyecto>
 
-                <AppProyecto
-                    nombre="PMR Industria"
-                    imagen="imagenes/pmr.png"
-                    descripcion="Página web con contenido gestionable de forma dinámica. Imágenes, videos, contacto y solicitudes de presupuesto."
-                    link="https://pmr.com.ar/"
-                    :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql']"
-                    :col="vista"
-                    >
-                </AppProyecto>
+                    <AppProyecto
+                        nombre="Andes Elevadores"
+                        imagen="imagenes/andes.png"
+                        descripcion="Página web con contenido gestionable de forma dinámica. Imágenes, videos, contacto y solicitudes de presupuesto."
+                        link="https://www.andeselevadores.com.ar/"
+                        :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql']"
+                        :vista="vista"
+                        >
+                    </AppProyecto>
 
-                <AppProyecto
-                    nombre="Andes Elevadores"
-                    imagen="imagenes/andes.png"
-                    descripcion="Página web con contenido gestionable de forma dinámica. Imágenes, videos, contacto y solicitudes de presupuesto."
-                    link="https://www.andeselevadores.com.ar/"
-                    :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql']"
-                    :col="vista"
-                    >
-                </AppProyecto>
+                    <AppProyecto
+                        nombre="Casa Perez"
+                        imagen="imagenes/casaperez.png"
+                        descripcion="E-commerce personalizado desarrollado para control de stock y ventas. Contenido administrable de forma dinámica. Zona privada. Carrito. Tipos de envío. Medios de pago. Integración con Mercado Pago. Actualización masiva de productos mediante excel. Generación de archivos xml para integración con Electrobase."
+                        link="https://d1.osole.com.ar/casaperez/public/"
+                        :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql', 'mp']"
+                        :vista="vista"
+                        >
+                    </AppProyecto>
 
+                    <AppProyecto
+                        nombre="PMR Industria"
+                        imagen="imagenes/pmr.png"
+                        descripcion="Página web con contenido gestionable de forma dinámica. Imágenes, videos, contacto y solicitudes de presupuesto."
+                        link="https://pmr.com.ar/"
+                        :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql']"
+                        :vista="vista"
+                        >
+                    </AppProyecto>
+
+                    <AppProyecto
+                        nombre="Andes Elevadores"
+                        imagen="imagenes/andes.png"
+                        descripcion="Página web con contenido gestionable de forma dinámica. Imágenes, videos, contacto y solicitudes de presupuesto."
+                        link="https://www.andeselevadores.com.ar/"
+                        :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql']"
+                        :vista="vista"
+                        >
+                    </AppProyecto>
+
+                </div>
             </div>
         </div>
     </div>
@@ -115,8 +147,8 @@ export default {
 
 .proyectos{
     /* border:1px solid red; */
-    max-height: calc(100vh - 146px);
-    overflow-y: auto;
+    max-height: calc(100vh - 150px);
+    /* overflow-y: scroll; */
 }
 
 .display{
