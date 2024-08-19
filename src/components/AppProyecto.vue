@@ -61,7 +61,7 @@
 <script>
 export default {
     name: 'AppProyecto',
-    props: ['nombre', 'imagen', 'descripcion', 'link', 'tecnologias', 'vista'],
+    props: ['nombre', 'imagen', 'descripcion', 'link', 'tecnologias', 'vista', 'fecha'],
 }
 </script>
 

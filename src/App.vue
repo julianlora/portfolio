@@ -23,11 +23,6 @@ export default {
   name: 'App',
   mounted() {
     AOS.init();
-    // var fechas = []
-    document.querySelectorAll('.proyecto').forEach((proyecto) => {
-        proyecto.getAttribute('fecha')
-        console.log(proyecto.getAttribute('data-fecha'))
-    });
   },
   components: {
     // HelloWorld,
@@ -43,6 +38,9 @@ export default {
 #app{
     font-family: Inter;
 }
+.os-scrollbar-handle{
+  z-index: 1;
+}
 .scrollbar-tag{
   padding: 7px;
   color: #fff;
@@ -52,6 +50,16 @@ export default {
   top: -12px;
   right: 20px;
   align-content: center;
+}
+.scrollbar-point{
+  position:absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 4px solid;
+  border-color: rgba(0, 0, 0, 0.55);
+  background-color: #fff;
+  right: -8px;
 }
 
 </style>

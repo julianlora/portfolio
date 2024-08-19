@@ -136,13 +136,57 @@ export default {
         },
         });
 
+        const scrollbar = document.querySelector('.os-scrollbar-vertical .os-scrollbar-track')
+        scrollbar.style.position = 'relative'
+        var fechas = [];
+        var conteoFechas = {};
+        document.querySelectorAll('.proyecto').forEach((proyecto) => {
+            let fecha = proyecto.getAttribute('data-fecha');
+            let fechaNumero = parseInt(fecha);
+
+            if (!isNaN(fechaNumero)) {
+                fechas.push(fechaNumero);
+
+                if (conteoFechas[fechaNumero]) {
+                    conteoFechas[fechaNumero]++;
+                } else {
+                    conteoFechas[fechaNumero] = 1;
+                }
+            }
+        });
+
+        console.log('Fechas:', fechas);
+        console.log('Conteo de Fechas:', conteoFechas);
+        const cantidad = fechas.length
+        let conteoFechasArray = Object.entries(conteoFechas);
+        conteoFechasArray.sort((a, b) => b[0] - a[0]);
+        var distance = 0;
+        conteoFechasArray.forEach(([fecha, conteo]) => {
+            let loc = Math.round((conteo / cantidad) * 100);
+            distance += loc;
+            const element = `
+                <div class='scrollbar-point' style='top:calc(${distance}% - 18px)'>
+                ${fecha}
+                </div>
+            `;
+            scrollbar.insertAdjacentHTML('beforeend', element);
+        });
+        
         const handle = document.querySelector('.os-scrollbar-vertical .os-scrollbar-handle')
         var element = `
         <div class='scrollbar-tag'>
-            asdas
+            ${Math.max(...fechas)}
         </div>
         `
         handle.insertAdjacentHTML('beforeend', element)
+
+        const points = document.querySelectorAll('.scrollbar-point');
+        window.addEventListener('scroll', function() {
+            console.log('scrolling');
+            points.forEach((point) => {
+                point.style.display = 'none';
+            });
+        });
 
         
     },
