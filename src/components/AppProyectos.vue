@@ -134,6 +134,11 @@ export default {
             x: 'hidden',
             y: 'scroll',
         },
+        callbacks: {
+            onScroll: function() {
+                console.log('scrolled');
+            }
+        }
         });
 
         const scrollbar = document.querySelector('.os-scrollbar-vertical .os-scrollbar-track')
@@ -182,7 +187,7 @@ export default {
 
         const points = document.querySelectorAll('.scrollbar-point');
         window.addEventListener('scroll', function() {
-            console.log('scrolling');
+            console.log('sdkldl')
             points.forEach((point) => {
                 point.style.display = 'none';
             });
