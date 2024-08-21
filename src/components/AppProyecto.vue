@@ -13,6 +13,7 @@
                     </div>
                     
                     <div class='iconos'>
+                        <i v-if="tecnologias.includes('python')" class="fa-brands fa-python fa-xl"></i>
                         <i v-if="tecnologias.includes('laravel')" class="fa-brands fa-laravel fa-xl"></i>
                         <i v-if="tecnologias.includes('php')" class="fa-brands fa-php fa-xl"></i>
                         <i v-if="tecnologias.includes('javascript')" class="fa-brands fa-js fa-xl"></i>
@@ -21,6 +22,7 @@
                         <i v-if="tecnologias.includes('bootstrap')" class="fa-brands fa-bootstrap fa-xl"></i>
                         <i v-if="tecnologias.includes('sql')" class="fa-solid fa-database fa-xl"></i>
                         <img v-if="tecnologias.includes('mp')" src="imagenes/mp.png" alt="" style="height: 32px;">
+                        <img v-if="tecnologias.includes('c++')" src="imagenes/c++.png" alt="" style="height: 32px;">
                     </div>
                 </div>
             </div>
@@ -41,7 +43,7 @@
         </div>
     </div>
 
-    <div :id="id" v-if="vista==='mosaic'" class='m-proyecto col-3' :data-fecha='fecha' data-aos='fade-up'>
+    <div :id="id" v-if="vista==='mosaic'" class='m-proyecto col-3' :data-fecha='fecha'>
         <div class='m-proyecto-margin'>
             <div class='m-portada' :style="{ backgroundImage: `url(${imagen})` }">
 
@@ -50,7 +52,7 @@
                 {{ nombre }}
             </div>
             <div class='m-overlay'>
-                <img @click="emitirEvento" src="../../public/imagenes/info.png" alt="" style="padding-right: 5px;">
+                <img class='ver-mas' @click="emitirEvento" src="../../public/imagenes/info.png" alt="" style="padding-right: 5px;">
                 <a :href="link" target="_blank"><img src="../../public/imagenes/arrow-up.png" alt=""></a>
             </div>
         </div>
@@ -125,6 +127,9 @@ export default {
 }
 .m-overlay img{
     height: 35px;
+}
+.ver-mas{
+    cursor: pointer;
 }
 
 .proyecto{

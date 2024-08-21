@@ -30,6 +30,62 @@
             
             <div id="scrollable">
                 <div class="proyectos row" :key="refresh" data-aos='fade-up'>
+
+                    <AppProyecto @viewProject="viewProject"
+                        nombre="Gufra"
+                        imagen="imagenes/conometal.jpg"
+                        descripcion="E-commerce personalizado desarrollado para control de stock y ventas. Contenido administrable de forma dinámica. Zona privada. Carrito. Tipos de envío. Medios de pago. Integración con Mercado Pago. Actualización masiva de productos mediante excel. Generación de archivos xml para integración con Electrobase."
+                        link=""
+                        :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql', 'mp']"
+                        :vista="vista"
+                        fecha='2024'
+                        >
+                    </AppProyecto>
+
+                    <AppProyecto @viewProject="viewProject"
+                        nombre="Merclin"
+                        imagen="imagenes/conometal.jpg"
+                        descripcion="E-commerce personalizado desarrollado para control de stock y ventas. Contenido administrable de forma dinámica. Zona privada. Carrito. Tipos de envío. Medios de pago. Integración con Mercado Pago. Actualización masiva de productos mediante excel. Generación de archivos xml para integración con Electrobase."
+                        link=""
+                        :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql', 'mp']"
+                        :vista="vista"
+                        fecha='2024'
+                        >
+                    </AppProyecto>
+
+                    <AppProyecto @viewProject="viewProject"
+                        nombre="AWS"
+                        imagen="imagenes/conometal.jpg"
+                        descripcion="E-commerce personalizado desarrollado para control de stock y ventas. Contenido administrable de forma dinámica. Zona privada. Carrito. Tipos de envío. Medios de pago. Integración con Mercado Pago. Actualización masiva de productos mediante excel. Generación de archivos xml para integración con Electrobase."
+                        link=""
+                        :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql', 'mp']"
+                        :vista="vista"
+                        fecha='2024'
+                        >
+                    </AppProyecto>
+
+                    <AppProyecto @viewProject="viewProject"
+                        nombre="Conometal"
+                        imagen="imagenes/conometal.jpg"
+                        descripcion="E-commerce personalizado desarrollado para control de stock y ventas. Contenido administrable de forma dinámica. Zona privada. Carrito. Tipos de envío. Medios de pago. Integración con Mercado Pago. Actualización masiva de productos mediante excel. Generación de archivos xml para integración con Electrobase."
+                        link=""
+                        :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql', 'mp']"
+                        :vista="vista"
+                        fecha='2024'
+                        >
+                    </AppProyecto>
+
+                    <AppProyecto @viewProject="viewProject"
+                        nombre="Bulones KC"
+                        imagen="imagenes/buloneskc.jpg"
+                        descripcion="E-commerce personalizado desarrollado para control de stock y ventas. Contenido administrable de forma dinámica. Zona privada. Carrito. Tipos de envío. Medios de pago. Integración con Mercado Pago. Actualización masiva de productos mediante excel. Generación de archivos xml para integración con Electrobase."
+                        link="https://d1.osole.com.ar/industriaskc/public/"
+                        :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql', 'mp']"
+                        :vista="vista"
+                        fecha='2024'
+                        >
+                    </AppProyecto>
+
                     <AppProyecto @viewProject="viewProject"
                         nombre="Casa Perez"
                         imagen="imagenes/casaperez.png"
@@ -37,11 +93,11 @@
                         link="https://d1.osole.com.ar/casaperez/public/"
                         :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql', 'mp']"
                         :vista="vista"
-                        fecha='2025'
+                        fecha='2024'
                         >
                     </AppProyecto>
 
-                    <AppProyecto
+                    <AppProyecto @viewProject="viewProject"
                         nombre="PMR Industria"
                         imagen="imagenes/pmr.png"
                         descripcion="Página web con contenido gestionable de forma dinámica. Imágenes, videos, contacto y solicitudes de presupuesto."
@@ -52,49 +108,72 @@
                         >
                     </AppProyecto>
 
-                    <AppProyecto
+                    <AppProyecto @viewProject="viewProject"
                         nombre="Andes Elevadores"
                         imagen="imagenes/andes.png"
                         descripcion="Página web con contenido gestionable de forma dinámica. Imágenes, videos, contacto y solicitudes de presupuesto."
                         link="https://www.andeselevadores.com.ar/"
                         :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql']"
                         :vista="vista"
-                        fecha="2023"
+                        fecha="2024"
                         >
                     </AppProyecto>
 
-                    <AppProyecto
-                        nombre="Casa Perez"
-                        imagen="imagenes/casaperez.png"
-                        descripcion="E-commerce personalizado desarrollado para control de stock y ventas. Contenido administrable de forma dinámica. Zona privada. Carrito. Tipos de envío. Medios de pago. Integración con Mercado Pago. Actualización masiva de productos mediante excel. Generación de archivos xml para integración con Electrobase."
-                        link="https://d1.osole.com.ar/casaperez/public/"
-                        :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql', 'mp']"
+                    <AppProyecto @viewProject="viewProject"
+                        nombre="Cripto Trading Bot"
+                        imagen="imagenes/tradingbot.jpg"
+                        descripcion="sd"
+                        link="https://github.com/julianlora/trading-bot.git"
+                        :tecnologias="['python']"
                         :vista="vista"
-                        fecha="2023"
+                        fecha='2023'
                         >
                     </AppProyecto>
 
-                    <AppProyecto
-                        nombre="PMR Industria"
-                        imagen="imagenes/pmr.png"
-                        descripcion="Página web con contenido gestionable de forma dinámica. Imágenes, videos, contacto y solicitudes de presupuesto."
-                        link="https://pmr.com.ar/"
-                        :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql']"
+                    <AppProyecto @viewProject="viewProject"
+                        nombre="TaskIt - Gestión de tareas"
+                        imagen="imagenes/taskit.jpg"
+                        descripcion="sd"
+                        link="https://github.com/julianlora/TaskIt.git"
+                        :tecnologias="['php','javascript','html','css','sql', 'mp']"
                         :vista="vista"
-                        fecha="2021"
+                        fecha='2023'
                         >
                     </AppProyecto>
 
-                    <AppProyecto
-                        nombre="Andes Elevadores"
-                        imagen="imagenes/andes.png"
-                        descripcion="Página web con contenido gestionable de forma dinámica. Imágenes, videos, contacto y solicitudes de presupuesto."
-                        link="https://www.andeselevadores.com.ar/"
-                        :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','sql']"
+                    <AppProyecto @viewProject="viewProject"
+                        nombre="Final Space website"
+                        imagen="imagenes/finalspace.jpg"
+                        descripcion="sd"
+                        link="https://julianlora.github.io/laboratorio3/index.html"
+                        :tecnologias="['javascript','html','css']"
                         :vista="vista"
-                        fecha="2021"
+                        fecha='2023'
                         >
                     </AppProyecto>
+
+                    <AppProyecto @viewProject="viewProject"
+                        nombre="Task Manager"
+                        imagen="imagenes/taskmanager.jpg"
+                        descripcion="sd"
+                        link="https://julianlora.github.io/task-manager/"
+                        :tecnologias="['javascript','html','css']"
+                        :vista="vista"
+                        fecha='2022'
+                        >
+                    </AppProyecto>
+
+                    <AppProyecto @viewProject="viewProject"
+                        nombre="Ocho reinas"
+                        imagen="imagenes/ochoreinas.jpg"
+                        descripcion="sd"
+                        link="https://github.com/julianlora/eight-queens.git"
+                        :tecnologias="['c++']"
+                        :vista="vista"
+                        fecha='2022'
+                        >
+                    </AppProyecto>
+
 
                 </div>
             </div>
@@ -123,7 +202,7 @@ export default {
         };
     },
     mounted() {
-        var instance = OverlayScrollbars(document.querySelector('#scrollable'), {
+        const instance = OverlayScrollbars(document.querySelector('#scrollable'), {
             className: 'os-theme-round-dark',
             overflowBehavior : {
                 x : "hidden",
@@ -222,13 +301,13 @@ export default {
         }
         function handleScrollStop() {
             scrollbarTag.classList.remove('scrolling')
-            // instance.scroll({ y: '70%' }, 500);
+            // OverlayScrollbars(document.querySelector('#scrollable')).scroll({ y: '70%' }, 500);
         }
         
     },
     methods: {
         displayChange(event, type) {
-            console.log(type);
+            // console.log(type);
             if(event){
                 if(!event.target.classList.contains('selected')){
                     document.querySelectorAll('.display-icon').forEach((icon) => {
@@ -240,13 +319,23 @@ export default {
                     icon.classList.toggle('selected');
                 });
             }
-            
             this.vista = type;
             this.refresh += 1;
         },
         viewProject(nombre){
-            console.log(nombre);
+            // console.log(nombre);
             this.displayChange(null, 'list');
+            this.$nextTick(() => {
+                const titulos = document.querySelectorAll('.proyecto .titulo')
+                const height = document.querySelector('.proyecto').clientHeight;
+                titulos.forEach((titulo, index) => {
+                    if (titulo.innerHTML == nombre) {
+                        let percent = index * (height);
+                        // console.log(percent);
+                        OverlayScrollbars(document.querySelector('#scrollable')).scroll({ y: `${percent}px` }, 500);
+                    }
+                });
+            });
         }
         
     }
