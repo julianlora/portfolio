@@ -1,5 +1,5 @@
 <template>
-    <div v-if="vista==='list'" :class="['proyecto', { 'col-12': vista === 'list' }, {'col-3': vista !== 'list' }]" :data-fecha="fecha" data-skills="PHP Laravel HTML CSS Bootstrap JavaScript MySQL Ajax JQuery">       
+    <div :id="id" v-if="vista==='list'" :class="['proyecto', { 'col-12': vista === 'list' }, {'col-3': vista !== 'list' }]" :data-fecha="fecha" data-skills="PHP Laravel HTML CSS Bootstrap JavaScript MySQL Ajax JQuery">       
         <div class="portada-proyecto" :style="{ backgroundImage: `url(${imagen})` }"></div>
         <div class='proyecto-info'>
             <div class='d-flex'>
@@ -41,7 +41,7 @@
         </div>
     </div>
 
-    <div v-if="vista==='mosaic'" class='m-proyecto col-3' :data-fecha='fecha' data-aos='fade-up'>
+    <div :id="id" v-if="vista==='mosaic'" class='m-proyecto col-3' :data-fecha='fecha' data-aos='fade-up'>
         <div class='m-proyecto-margin'>
             <div class='m-portada' :style="{ backgroundImage: `url(${imagen})` }">
 
@@ -50,7 +50,7 @@
                 {{ nombre }}
             </div>
             <div class='m-overlay'>
-                <img src="../../public/imagenes/info.png" alt="" style="padding-right: 5px;">
+                <img @click="emitirEvento" src="../../public/imagenes/info.png" alt="" style="padding-right: 5px;">
                 <a :href="link" target="_blank"><img src="../../public/imagenes/arrow-up.png" alt=""></a>
             </div>
         </div>
@@ -61,7 +61,13 @@
 <script>
 export default {
     name: 'AppProyecto',
-    props: ['nombre', 'imagen', 'descripcion', 'link', 'tecnologias', 'vista', 'fecha'],
+    props: ['id','nombre', 'imagen', 'descripcion', 'link', 'tecnologias', 'vista', 'fecha'],
+    emits: ['viewProject'],
+    methods: {
+        emitirEvento(){
+            this.$emit('viewProject', this.nombre);
+        }
+    }
 }
 </script>
 
@@ -130,7 +136,7 @@ export default {
     margin-bottom: 25px;
     height: 388px;
     transition: all 0.01s;
-    width: calc(100% - 40px);
+    width: calc(100% - 95px);
 }
 
 .portada-proyecto{

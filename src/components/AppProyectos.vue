@@ -30,7 +30,7 @@
             
             <div id="scrollable">
                 <div class="proyectos row" :key="refresh" data-aos='fade-up'>
-                    <AppProyecto
+                    <AppProyecto @viewProject="viewProject"
                         nombre="Casa Perez"
                         imagen="imagenes/casaperez.png"
                         descripcion="E-commerce personalizado desarrollado para control de stock y ventas. Contenido administrable de forma dinámica. Zona privada. Carrito. Tipos de envío. Medios de pago. Integración con Mercado Pago. Actualización masiva de productos mediante excel. Generación de archivos xml para integración con Electrobase."
@@ -107,10 +107,8 @@ import AppProyecto from './AppProyecto.vue';
 // import AppProyectoMosaico from './AppProyectoMosaico.vue';
 // import AOS from 'aos';
 // import 'aos/dist/aos.css';
-import 'overlayscrollbars/overlayscrollbars.css';
-import { 
-  OverlayScrollbars, 
-} from 'overlayscrollbars';
+import OverlayScrollbars from 'overlayscrollbars';
+import 'overlayscrollbars/css/OverlayScrollbars.css';
 
 export default {
     name: 'AppProyectos',
@@ -125,22 +123,23 @@ export default {
         };
     },
     mounted() {
-        OverlayScrollbars(document.querySelector('#scrollable'), {
-        scrollbars: {
-            clickScrolling : true,
-            theme: 'os-theme-dark',
-        },
-        overflow: {
-            x: 'hidden',
-            y: 'scroll',
-        },
-        callbacks: {
-            onScroll: function() {
-                console.log('scrolled');
+        var instance = OverlayScrollbars(document.querySelector('#scrollable'), {
+            className: 'os-theme-round-dark',
+            overflowBehavior : {
+                x : "hidden",
+                y : "scroll"
+            },
+            callbacks: {
+                onScroll: function() {
+                    handleScroll();
+                },
+                onScrollStop: function() {
+                    handleScrollStop();
+                }
             }
-        }
         });
 
+        // SCROLLBAR POINTS
         const scrollbar = document.querySelector('.os-scrollbar-vertical .os-scrollbar-track')
         scrollbar.style.position = 'relative'
         var fechas = [];
@@ -159,24 +158,26 @@ export default {
                 }
             }
         });
-
-        console.log('Fechas:', fechas);
-        console.log('Conteo de Fechas:', conteoFechas);
         const cantidad = fechas.length
         let conteoFechasArray = Object.entries(conteoFechas);
         conteoFechasArray.sort((a, b) => b[0] - a[0]);
         var distance = 0;
-        conteoFechasArray.forEach(([fecha, conteo]) => {
+        conteoFechasArray.forEach(([fecha, conteo], index) => {
             let loc = Math.round((conteo / cantidad) * 100);
             distance += loc;
+            var siguienteFecha = null;
+            if (index < conteoFechasArray.length - 1) {
+                siguienteFecha = conteoFechasArray[index + 1][0];
+            }
             const element = `
-                <div class='scrollbar-point' style='top:calc(${distance}% - 18px)'>
-                ${fecha}
+                <div class='scrollbar-point' data-anterior='${fecha}' data-fecha='${siguienteFecha}' style='top:calc(${distance}% - 18px)'>
+                
                 </div>
             `;
             scrollbar.insertAdjacentHTML('beforeend', element);
         });
         
+        // CUSTOM HANDLE
         const handle = document.querySelector('.os-scrollbar-vertical .os-scrollbar-handle')
         var element = `
         <div class='scrollbar-tag'>
@@ -185,30 +186,69 @@ export default {
         `
         handle.insertAdjacentHTML('beforeend', element)
 
-        const points = document.querySelectorAll('.scrollbar-point');
-        window.addEventListener('scroll', function() {
-            console.log('sdkldl')
-            points.forEach((point) => {
-                point.style.display = 'none';
-            });
-        });
+        // SECONDARY TRACK
+        const track = document.querySelector('.os-scrollbar-vertical .os-scrollbar-track')
+        element = `<div id='secondary-track'></div>`
+        track.insertAdjacentHTML('beforeend', element)
 
+        // SCROLL LISTENER
+        const points = document.querySelectorAll('.scrollbar-point');
+        const scrollbarTag = document.querySelector('.scrollbar-tag');
+        const secondaryTrack = document.getElementById('secondary-track');
+        function handleScroll() {
+            //Track
+            secondaryTrack.style.height = `calc(${instance.scroll().handleOffset.y}px + 4px)`
+            
+            //Tag
+            scrollbarTag.classList.add('scrolling')
+
+            //Points
+            const rect2 = document.querySelector('.os-scrollbar-vertical .os-scrollbar-handle').getBoundingClientRect();
+            points.forEach((point) => {
+                const rect1 = point.getBoundingClientRect();
+                const distanciaY = rect2.top - rect1.top
+                if(point.classList.contains('scrolled')){
+                    if(distanciaY < 0){
+                        point.classList.remove('scrolled');
+                        scrollbarTag.innerHTML = point.getAttribute('data-anterior');
+                    }
+                } else {
+                    if(distanciaY > 0){
+                        point.classList.add('scrolled');
+                        scrollbarTag.innerHTML = point.getAttribute('data-fecha');
+                    }
+                }
+            });
+        }
+        function handleScrollStop() {
+            scrollbarTag.classList.remove('scrolling')
+            // instance.scroll({ y: '70%' }, 500);
+        }
         
     },
     methods: {
         displayChange(event, type) {
             console.log(type);
-            if(!event.target.classList.contains('selected')){
+            if(event){
+                if(!event.target.classList.contains('selected')){
+                    document.querySelectorAll('.display-icon').forEach((icon) => {
+                        icon.classList.toggle('selected');
+                    });
+                }
+            } else {
                 document.querySelectorAll('.display-icon').forEach((icon) => {
                     icon.classList.toggle('selected');
                 });
-                // document.querySelectorAll('.proyecto').forEach((proyecto) => {
-                //     proyecto.style.display = 'none';
-                // });
             }
+            
             this.vista = type;
             this.refresh += 1;
+        },
+        viewProject(nombre){
+            console.log(nombre);
+            this.displayChange(null, 'list');
         }
+        
     }
 }
 </script>

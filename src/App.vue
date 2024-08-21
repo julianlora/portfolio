@@ -47,19 +47,39 @@ export default {
   background-color: #000;
   border-radius: 5px;
   position: absolute;
-  top: -12px;
-  right: 20px;
+  top: -8px;
+  right: 23px;
   align-content: center;
+  font-size: 14px;
+  transition: all 0.15s;
+}
+.scrollbar-tag.scrolling{
+  /* transform: scale(1.1); */
+  font-size: large;
+  top: -12px;
 }
 .scrollbar-point{
   position:absolute;
-  width: 20px;
-  height: 20px;
+  width: 13px;
+  height: 13px;
   border-radius: 50%;
-  border: 4px solid;
+  border: 3px solid;
   border-color: rgba(0, 0, 0, 0.55);
   background-color: #fff;
-  right: -8px;
+  right: 3px;
+  transition: border-color 0.15s, background-color 0.15s;
 }
+.scrollbar-point.scrolled{
+  border-color: #000;
+  background-color: #000;
+}
+#secondary-track{
+  position: absolute;
+  left: 9px;
+  top: 0;
+  width: 3px;
+  background-color: #000;
+}
+
 
 </style>
