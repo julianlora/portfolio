@@ -52,6 +52,7 @@ export default {
   align-content: center;
   font-size: 14px;
   transition: all 0.15s;
+  cursor:default;
 }
 .scrollbar-tag.scrolling{
   /* transform: scale(1.1); */

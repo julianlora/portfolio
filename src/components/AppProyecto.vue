@@ -1,5 +1,5 @@
 <template>
-    <div :id="id" v-if="vista==='list'" :class="['proyecto', { 'col-12': vista === 'list' }, {'col-3': vista !== 'list' }]" :data-fecha="fecha" data-skills="PHP Laravel HTML CSS Bootstrap JavaScript MySQL Ajax JQuery">       
+    <div :id="id" v-if="vista==='list' && (!filtro || tecnologias.includes(filtro))"  :class="['proyecto', { 'col-12': vista === 'list' }, {'col-3': vista !== 'list' }]" :data-fecha="fecha" :data-skills="tecnologias.join(' ')">       
         <div class="portada-proyecto" :style="{ backgroundImage: `url(${imagen})` }"></div>
         <div class='proyecto-info'>
             <div class='d-flex'>
@@ -43,7 +43,7 @@
         </div>
     </div>
 
-    <div :id="id" v-if="vista==='mosaic'" class='m-proyecto col-3' :data-fecha='fecha'>
+    <div :id="id" v-if="vista==='mosaic' && (!filtro || tecnologias.includes(filtro))" class='m-proyecto col-3' :data-fecha='fecha'>
         <div class='m-proyecto-margin'>
             <div class='m-portada' :style="{ backgroundImage: `url(${imagen})` }">
 
@@ -63,7 +63,7 @@
 <script>
 export default {
     name: 'AppProyecto',
-    props: ['id','nombre', 'imagen', 'descripcion', 'link', 'tecnologias', 'vista', 'fecha'],
+    props: ['id','nombre', 'imagen', 'descripcion', 'link', 'tecnologias', 'vista', 'fecha', 'filtro'],
     emits: ['viewProject'],
     methods: {
         emitirEvento(){
@@ -127,6 +127,11 @@ export default {
 }
 .m-overlay img{
     height: 35px;
+    transition: all 0.15s;
+}
+
+.m-overlay img:hover{
+    transform: scale(1.2);
 }
 .ver-mas{
     cursor: pointer;
@@ -211,5 +216,21 @@ export default {
 
 .proyecto-img:hover{
     transform: scale(1.08); 
+}
+
+.m-proyecto-margin {
+    /* -webkit-mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.2) 50%,#000 75%); */
+    mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.1) 50%,#000 75%);
+    /* -webkit-mask-size: 800%; */
+    mask-size: 800%;
+    /* -webkit-mask-position: 0; */
+    mask-position: 0;
+}
+
+.m-proyecto-margin:hover {
+    transition: mask-position 0.8s cubic-bezier(0, 0.21, 0.25, 1),-webkit-mask-position 0.8s cubic-bezier(0, 0.21, 0.25, 1);
+    -webkit-mask-position: 120%;
+    mask-position: 120%;
+    opacity: 1;
 }
 </style>
