@@ -85,7 +85,7 @@ export default {
     overflow: hidden;
     border: 1px solid #d9d9d9;
     border-radius: 8px;
-    height: 350px;
+    height: 330px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
@@ -93,14 +93,14 @@ export default {
 }
 .m-portada{
     width: 100%;
-    height: 270px;
+    height: 260px;
     background-position:top; 
     background-repeat: no-repeat;
     background-size: cover;
 }
 .m-info{
     text-align: center;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 20px;
     flex-grow: 1;
     align-content: center;
@@ -146,7 +146,7 @@ export default {
     margin-bottom: 25px;
     height: 388px;
     transition: all 0.01s;
-    width: calc(100% - 95px);
+    width: calc(100% - 75px);
 }
 
 .portada-proyecto{

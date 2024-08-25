@@ -36,7 +36,7 @@ export default {
 
 <style>
 #app{
-    font-family: Inter;
+    font-family: Poppins;
 }
 .os-scrollbar-handle{
   z-index: 1;

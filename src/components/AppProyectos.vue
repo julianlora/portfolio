@@ -31,7 +31,7 @@
 
                     <AppProyecto @viewProject="viewProject"
                         nombre="Gufra"
-                        imagen="imagenes/conometal.jpg"
+                        imagen="imagenes/gufra.png"
                         descripcion="E-commerce personalizado desarrollado para control de stock y ventas. Contenido administrable de forma dinámica. Zona privada. Carrito. Tipos de envío. Medios de pago. Integración con Mercado Pago. Actualización masiva de productos mediante excel. Generación de archivos xml para integración con Electrobase."
                         link=""
                         :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','mysql', 'mp']"
@@ -43,7 +43,7 @@
 
                     <AppProyecto @viewProject="viewProject"
                         nombre="Merclin"
-                        imagen="imagenes/conometal.jpg"
+                        imagen="imagenes/merclin.png"
                         descripcion="E-commerce personalizado desarrollado para control de stock y ventas. Contenido administrable de forma dinámica. Zona privada. Carrito. Tipos de envío. Medios de pago. Integración con Mercado Pago. Actualización masiva de productos mediante excel. Generación de archivos xml para integración con Electrobase."
                         link=""
                         :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','mysql', 'mp']"
@@ -54,8 +54,8 @@
                     </AppProyecto>
 
                     <AppProyecto @viewProject="viewProject"
-                        nombre="AWS"
-                        imagen="imagenes/conometal.jpg"
+                        nombre="AWS Lambda"
+                        imagen="imagenes/aws.jpg"
                         descripcion="E-commerce personalizado desarrollado para control de stock y ventas. Contenido administrable de forma dinámica. Zona privada. Carrito. Tipos de envío. Medios de pago. Integración con Mercado Pago. Actualización masiva de productos mediante excel. Generación de archivos xml para integración con Electrobase."
                         link=""
                         :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','mysql', 'mp']"
@@ -433,7 +433,7 @@ export default {
 .seccion-titulo{
     font-size: 30px;
     font-weight: 600;
-    padding-bottom: 25px;
+    padding-bottom: 15px;
 }
 
 .proyecto-cont{
@@ -442,8 +442,9 @@ export default {
 
 .proyectos{
     /* border:1px solid red; */
-    max-height: calc(100vh - 150px);
+    max-height: calc(100vh - 240px);
     /* overflow-y: scroll; */
+    padding-right: 20px;
 }
 
 .display{
