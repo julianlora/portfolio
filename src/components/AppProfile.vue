@@ -29,6 +29,9 @@ name: 'AppProfile',
     width: 200px;
     /* width: 100%; */
     height: 100%;
+    transition: width 0.5s;
+    background-color: #fff;
+    z-index: 2;
 }
 
 #profile{
@@ -62,5 +65,8 @@ name: 'AppProfile',
 .contacto-btn:hover{
     background-color: #fff;
     color: #000;
+}
+.expanded{
+    width: 100%;
 }
 </style>

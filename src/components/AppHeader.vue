@@ -10,7 +10,7 @@
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <button @click="about" class="nav-link" aria-current="page" href="#">Sobre mí</button>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Features</a>
@@ -38,6 +38,20 @@
   <script>
   export default {
     name: 'AppHeader',
+    methods: {
+      active(event) {
+        const navItem = event.currentTarget.closest('.nav-item');
+        if (navItem) {
+          document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+          navItem.classList.add('active');
+        }
+      },
+      about(event){
+        console.log('about')
+        document.querySelector('.profile-cont').classList.toggle('expanded')
+        this.active(event);
+      }
+    }
   }
   </script>
   
@@ -47,6 +61,10 @@
     position: fixed;
     z-index: 1;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  }
+  .active .nav-link{
+    color: rgba(0, 0, 0, 1) !important;
+    font-weight: 500;
   }
   </style>
   
