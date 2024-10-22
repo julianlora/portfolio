@@ -1,8 +1,8 @@
 <template>
   <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-  <AppHeader></AppHeader>
+  <!-- <AppHeader></AppHeader> -->
   <main>
-    <section class="container-fluid" style='padding: 0;padding-top:60px;'>
+    <section class="container-fluid" style='padding: 0;'>
       <AppProfile></AppProfile>
       <AppProyectos></AppProyectos>
     </section>
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import AppHeader from './components/AppHeader.vue';
+// import AppHeader from './components/AppHeader.vue';
 import AppProfile from './components/AppProfile.vue';
 import AppProyectos from './components/AppProyectos.vue';
 import AOS from 'aos';
@@ -26,7 +26,7 @@ export default {
   },
   components: {
     // HelloWorld,
-    AppHeader,
+    // AppHeader,
     AppProfile,
     AppProyectos,
   }

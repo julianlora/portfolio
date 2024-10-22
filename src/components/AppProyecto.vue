@@ -76,9 +76,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .m-proyecto{
-    padding-bottom: 25px;
+    padding-bottom: 35px;
     padding-left: 0 !important;
-    padding-right: 25px !important;
+    padding-right: 35px !important;
     
 }
 .m-proyecto-margin{

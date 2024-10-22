@@ -1,12 +1,12 @@
 <template>
-    <div style="padding-left: 200px;">
+    <div style="padding-left: 230px;">
         <!-- PROYECTOS -->
         <div class="proyecto-cont">
             <div class='seccion-titulo d-flex justify-content-between'>
                 <div>Proyectos</div>
                 <div class='display d-flex'>
-                    <img class='display-icon mosaic' src="imagenes/squares.png" @click="displayChange($event, 'mosaic')">
-                    <img class="selected display-icon list" src="imagenes/rows.png" @click="displayChange($event, 'list')">
+                    <img class='selected display-icon mosaic' src="imagenes/squares.png" @click="displayChange($event, 'mosaic')">
+                    <img class="display-icon list" src="imagenes/rows.png" @click="displayChange($event, 'list')">
                 </div>
             </div>
 
@@ -33,7 +33,7 @@
                         nombre="Gufra"
                         imagen="imagenes/gufra.png"
                         descripcion="E-commerce personalizado desarrollado para control de stock y ventas. Contenido administrable de forma dinámica. Zona privada. Carrito. Tipos de envío. Medios de pago. Integración con Mercado Pago. Actualización masiva de productos mediante excel. Generación de archivos xml para integración con Electrobase."
-                        link=""
+                        link="https://gufra.osole.com.ar"
                         :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','mysql', 'mp']"
                         :vista="vista"
                         fecha='2024'
@@ -69,7 +69,7 @@
                         nombre="Conometal"
                         imagen="imagenes/conometal.jpg"
                         descripcion="E-commerce personalizado desarrollado para control de stock y ventas. Contenido administrable de forma dinámica. Zona privada. Carrito. Tipos de envío. Medios de pago. Integración con Mercado Pago. Actualización masiva de productos mediante excel. Generación de archivos xml para integración con Electrobase."
-                        link=""
+                        link="https://conometal.osole.com.ar"
                         :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','mysql', 'mp']"
                         :vista="vista"
                         fecha='2024'
@@ -81,7 +81,7 @@
                         nombre="Bulones KC"
                         imagen="imagenes/buloneskc.jpg"
                         descripcion="E-commerce personalizado desarrollado para control de stock y ventas. Contenido administrable de forma dinámica. Zona privada. Carrito. Tipos de envío. Medios de pago. Integración con Mercado Pago. Actualización masiva de productos mediante excel. Generación de archivos xml para integración con Electrobase."
-                        link="https://d1.osole.com.ar/industriaskc/public/"
+                        link="https://buloneskc.osole.com.ar"
                         :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','mysql', 'mp']"
                         :vista="vista"
                         fecha='2024'
@@ -93,7 +93,7 @@
                         nombre="Casa Perez"
                         imagen="imagenes/casaperez.png"
                         descripcion="E-commerce personalizado desarrollado para control de stock y ventas. Contenido administrable de forma dinámica. Zona privada. Carrito. Tipos de envío. Medios de pago. Integración con Mercado Pago. Actualización masiva de productos mediante excel. Generación de archivos xml para integración con Electrobase."
-                        link="https://d1.osole.com.ar/casaperez/public/"
+                        link=""
                         :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','mysql', 'mp']"
                         :vista="vista"
                         fecha='2024'
@@ -208,14 +208,14 @@ export default {
     },
     data() {
         return {
-            vista: 'list',
+            vista: 'mosaic',
             refresh: 0,
             filtro: null,
         };
     },
     mounted() {
         const instance = OverlayScrollbars(document.querySelector('#scrollable'), {
-            className: 'os-theme-round-dark',
+            className: 'os-theme-dark',
             overflowBehavior : {
                 x : "hidden",
                 y : "scroll"
@@ -236,7 +236,7 @@ export default {
         scrollbar.style.position = 'relative'
         var fechas = [];
         var conteoFechas = {};
-        document.querySelectorAll('.proyecto').forEach((proyecto) => {
+        document.querySelectorAll('.m-proyecto').forEach((proyecto) => {
             let fecha = proyecto.getAttribute('data-fecha');
             let fechaNumero = parseInt(fecha);
 
@@ -334,6 +334,12 @@ export default {
             });
             skill.innerHTML += ` (${contador.length})`;
         })
+
+        const timeline = document.querySelectorAll('.timeline')
+        this.instance.options('className', 'os-theme-dark');
+        timeline.forEach((element) => {
+            element.style.display = 'none';
+        });
         
     },
     methods: {
@@ -418,6 +424,7 @@ export default {
     /* border: 1px solid #000; */
     cursor: pointer;
     transition: all 0.2s;
+    font-size: 14px;
 }
 
 .skills span:hover{
@@ -437,12 +444,12 @@ export default {
 }
 
 .proyecto-cont{
-    padding: 20px 25px 0px 25px;
+    padding: 20px 25px 0px 35px;
 }
 
 .proyectos{
     /* border:1px solid red; */
-    max-height: calc(100vh - 240px);
+    max-height: calc(100vh - 160px);
     /* overflow-y: scroll; */
     padding-right: 20px;
 }
