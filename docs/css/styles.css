@@ -1,0 +1,67 @@
+.modal-content{
+    border-radius: 0%;
+}
+
+.modal-body{
+    padding: 5px;
+}
+
+.modal-body img{
+    max-height: 80vh;
+    width: 100%;
+}
+
+.portada-seccion{
+    /* max-height: 500px;
+    overflow: hidden; */
+}
+
+#portada{
+    height: 520px;
+    width: 100%;
+    background-image: url(imagenes/batman.png);
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.poster{
+    display: flex;
+    align-items: center;
+    height: 520px;
+    overflow: hidden;
+}
+
+.video{
+    width: 100%;
+}
+
+
+
+
+
+.skills{
+    padding-bottom: 20px;
+}
+
+
+.skills span{
+    background-color: #d9d9d9;
+    padding: 8px 20px 8px 20px;
+    line-height: 45px;
+    margin-right: 10px;
+    border-radius: 8px;
+    /* border: 1px solid #000; */
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.skills span:hover{
+    background-color: grey;
+}
+
+.filtrando{
+    background-color: #000 !important;
+    color: #fff;
+}
+
