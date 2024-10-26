@@ -8,27 +8,30 @@
                 </div> -->
                 <div class="proyecto-encabezado">
                     <div class='d-flex justify-content-between'>
-                        <div class='titulo'>{{ nombre }}</div>
+                        <div class="d-flex align-items-center">
+                            <div class='titulo d-flex'>{{ nombre }}</div>
+                            <i v-if="estado" class="fa-solid fa-circle ps-2" :style="{ color: estado === 'Desplegado' ? '#63E6BE' : estado === 'En desarrollo' ? '#FFD43B' : ''  }"></i>
+                            <div v-if="estado" class="ps-1">{{estado}}</div>
+                        </div>
+                        
                         <a :href="link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square fa-lg"></i></a>
                     </div>
                     
                     <div class='iconos'>
-                        <i v-if="tecnologias.includes('python')" class="fa-brands fa-python fa-xl"></i>
-                        <i v-if="tecnologias.includes('laravel')" class="fa-brands fa-laravel fa-xl"></i>
-                        <i v-if="tecnologias.includes('php')" class="fa-brands fa-php fa-xl"></i>
-                        <i v-if="tecnologias.includes('javascript')" class="fa-brands fa-js fa-xl"></i>
-                        <i v-if="tecnologias.includes('html')" class="fa-brands fa-html5 fa-xl"></i>
-                        <i v-if="tecnologias.includes('css')" class="fa-brands fa-css3-alt fa-xl"></i>
-                        <i v-if="tecnologias.includes('bootstrap')" class="fa-brands fa-bootstrap fa-xl"></i>
-                        <i v-if="tecnologias.includes('sql')" class="fa-solid fa-database fa-xl"></i>
-                        <img v-if="tecnologias.includes('mp')" src="imagenes/mp.png" alt="" style="height: 32px;">
-                        <img v-if="tecnologias.includes('c++')" src="imagenes/c++.png" alt="" style="height: 32px;">
+                        <div v-if="tecnologias.includes('python')"><i class="fa-brands fa-python fa-xl"></i></div>
+                        <div v-if="tecnologias.includes('laravel')"><i class="fa-brands fa-laravel fa-xl"></i></div>
+                        <div v-if="tecnologias.includes('php')"><i class="fa-brands fa-php fa-xl"></i></div>
+                        <div v-if="tecnologias.includes('javascript')"><i class="fa-brands fa-js fa-xl"></i></div>
+                        <div v-if="tecnologias.includes('html')"><i class="fa-brands fa-html5 fa-xl"></i></div>
+                        <div v-if="tecnologias.includes('css')"><i class="fa-brands fa-css3-alt fa-xl"></i></div>
+                        <div v-if="tecnologias.includes('bootstrap')"><i class="fa-brands fa-bootstrap fa-xl"></i></div>
+                        <div v-if="tecnologias.includes('sql')"><i class="fa-solid fa-database fa-xl"></i></div>
+                        <div v-if="tecnologias.includes('mp')"><img src="imagenes/mp.png" alt="" style="height: 32px;"></div>
+                        <div v-if="tecnologias.includes('c++')"><img src="imagenes/c++.png" alt="" style="height: 32px;"></div>
                     </div>
                 </div>
             </div>
-            <div class="descripcion">
-                {{ descripcion }}    
-            </div>
+            <div v-html="descripcion" class="descripcion"></div>
             <!-- <div class='proyecto-imagenes d-flex'>
                 <div class='proyecto-img' style="background-image: url(imagenes/casaperez.png);" data-bs-toggle="modal" data-bs-target="#exampleModal" data-src="imagenes/casaperez.png">
 
@@ -43,7 +46,7 @@
         </div>
     </div>
 
-    <div :id="id" v-if="vista==='mosaic' && (!filtro || tecnologias.includes(filtro))" class='m-proyecto col-3' :data-fecha='fecha'>
+    <div :id="id" v-if="vista==='mosaic' && (!filtro || tecnologias.includes(filtro))" class='m-proyecto col-3' :data-fecha='fecha' :data-skills="tecnologias.join(' ')">
         <div class='m-proyecto-margin'>
             <div class='m-portada' :style="{ backgroundImage: `url(${imagen})` }">
 
@@ -52,6 +55,10 @@
                 {{ nombre }}
             </div>
             <div class='m-overlay'>
+                <div v-if="estado" class="m-estado d-flex align-items-center">
+                    <i class="fa-solid fa-circle ps-2" :style="{ color: estado === 'Desplegado' ? '#63E6BE' : estado === 'En desarrollo' ? '#FFD43B' : ''  }"></i>
+                    <div class="ps-2">{{estado}}</div>
+                </div>
                 <img class='ver-mas' @click="emitirEvento" src="../../public/imagenes/info.png" alt="" style="padding-right: 5px;">
                 <a :href="link" target="_blank"><img src="../../public/imagenes/arrow-up.png" alt=""></a>
             </div>
@@ -63,7 +70,7 @@
 <script>
 export default {
     name: 'AppProyecto',
-    props: ['id','nombre', 'imagen', 'descripcion', 'link', 'tecnologias', 'vista', 'fecha', 'filtro'],
+    props: ['id','nombre', 'imagen', 'descripcion', 'link', 'tecnologias', 'vista', 'fecha', 'filtro', 'estado'],
     emits: ['viewProject'],
     methods: {
         emitirEvento(){
@@ -100,12 +107,13 @@ export default {
 }
 .m-info{
     text-align: center;
-    font-weight: 600;
-    font-size: 20px;
+    font-weight: 500;
+    font-size: 18px;
     flex-grow: 1;
     align-content: center;
-    z-index: 100;
+    z-index: 1;
     transition: all 0.2s;
+    background-color: #fff;
 }
 .m-overlay{
     position: absolute;
@@ -124,6 +132,7 @@ export default {
 }
 .m-proyecto-margin:hover .m-info{
     color: #fff;
+    background-color: transparent;
 }
 .m-overlay img{
     height: 35px;
@@ -136,6 +145,13 @@ export default {
 .ver-mas{
     cursor: pointer;
 }
+.m-estado{
+    position: absolute;
+    top: 5px;
+    left: 0;
+    padding: 5px;
+    color: #fff;
+}
 
 .proyecto{
     display: flex;
@@ -147,6 +163,7 @@ export default {
     height: 388px;
     transition: all 0.01s;
     width: calc(100% - 75px);
+    background-color: #fff
 }
 
 .portada-proyecto{
@@ -179,7 +196,6 @@ export default {
 .titulo{
     font-size: 26px;
     font-weight: 600;
-    margin-bottom: 5px;
 }
 
 .proyecto a{
@@ -191,11 +207,18 @@ export default {
 }
 
 .iconos{
+    display: flex;
+    margin-top: 5px;
     /* margin-bottom: 20px; */
+}
+
+.iconos div{
+    padding-right: 5px;
 }
 
 .descripcion{
     padding-bottom: 20px;
+    padding-top: 10px;
 }
 
 .proyecto-imagenes{

@@ -32,9 +32,19 @@
                     <AppProyecto @viewProject="viewProject"
                         nombre="Gufra"
                         imagen="imagenes/gufra.png"
-                        descripcion="E-commerce personalizado desarrollado para control de stock y ventas. Contenido administrable de forma dinámica. Zona privada. Carrito. Tipos de envío. Medios de pago. Integración con Mercado Pago. Actualización masiva de productos mediante excel. Generación de archivos xml para integración con Electrobase."
-                        link="https://gufra.osole.com.ar"
-                        :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','mysql', 'mp']"
+                        descripcion="
+                        <ul>
+                            <li>Tipo: e-commerce.</li>
+                            <li>Administrador de contenido con roles de usuarios.</li>
+                            <li>Zona privada.</li>
+                            <li>Carrito de compras.</li>
+                            <li>Categorías y subcategorias</li>
+                            <li>Actualización masiva de productos y clientes mediante excel.</li>
+                            <li>Lista de precios mayorista y minorista.</li>
+                        </ul>"
+                        estado="Desplegado"
+                        link="https://gufra.com.ar"
+                        :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','mysql']"
                         :vista="vista"
                         fecha='2024'
                         :filtro="filtro"
@@ -44,9 +54,19 @@
                     <AppProyecto @viewProject="viewProject"
                         nombre="Merclin"
                         imagen="imagenes/merclin.png"
-                        descripcion="E-commerce personalizado desarrollado para control de stock y ventas. Contenido administrable de forma dinámica. Zona privada. Carrito. Tipos de envío. Medios de pago. Integración con Mercado Pago. Actualización masiva de productos mediante excel. Generación de archivos xml para integración con Electrobase."
+                        descripcion="
+                        <ul>
+                            <li>Tipo: e-commerce B2B.</li>
+                            <li>Administrador de contenido con roles de usuarios.</li>
+                            <li>Zona privada.</li>
+                            <li>Carrito de compras.</li>
+                            <li>Categorías y subcategorias</li>
+                            <li>Actualización masiva de productos y clientes mediante excel.</li>
+                            <li>Registro con alta de clientes.</li>
+                        </ul>"
+                        estado="En desarrollo"
                         link=""
-                        :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','mysql', 'mp']"
+                        :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','mysql']"
                         :vista="vista"
                         fecha='2024'
                         :filtro="filtro"
@@ -54,11 +74,18 @@
                     </AppProyecto>
 
                     <AppProyecto @viewProject="viewProject"
-                        nombre="AWS Lambda"
-                        imagen="imagenes/aws.jpg"
-                        descripcion="E-commerce personalizado desarrollado para control de stock y ventas. Contenido administrable de forma dinámica. Zona privada. Carrito. Tipos de envío. Medios de pago. Integración con Mercado Pago. Actualización masiva de productos mediante excel. Generación de archivos xml para integración con Electrobase."
+                        nombre="AWS Deployment"
+                        imagen="imagenes/awslogo.jpg"
+                        descripcion="
+                        <ul>
+                            <li>Tipo: deployment.</li>
+                            <li>ECR / ECS.</li>
+                            <li>Docker.</li>
+                            <li>Integración contínua con Github Actions.</li>
+                        </ul>"
+                        estado="Desplegado"
                         link=""
-                        :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','mysql', 'mp']"
+                        :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','mysql']"
                         :vista="vista"
                         fecha='2024'
                         :filtro="filtro"
@@ -68,9 +95,18 @@
                     <AppProyecto @viewProject="viewProject"
                         nombre="Conometal"
                         imagen="imagenes/conometal.jpg"
-                        descripcion="E-commerce personalizado desarrollado para control de stock y ventas. Contenido administrable de forma dinámica. Zona privada. Carrito. Tipos de envío. Medios de pago. Integración con Mercado Pago. Actualización masiva de productos mediante excel. Generación de archivos xml para integración con Electrobase."
+                        descripcion="
+                        <ul>
+                            <li>Tipo: e-commerce.</li>
+                            <li>Sincronización automática de productos y pedidos con Tango</li>
+                            <li>Hotspot de productos en imágenes.</li>
+                            <li>Administrador de contenido con roles de usuarios.</li>
+                            <li>Zona privada.</li>
+                            <li>Carrito de compras público y privado.</li>
+                        </ul>"
+                        estado="En desarrollo"
                         link="https://conometal.osole.com.ar"
-                        :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','mysql', 'mp']"
+                        :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','mysql']"
                         :vista="vista"
                         fecha='2024'
                         :filtro="filtro"
@@ -80,9 +116,18 @@
                     <AppProyecto @viewProject="viewProject"
                         nombre="Bulones KC"
                         imagen="imagenes/buloneskc.jpg"
-                        descripcion="E-commerce personalizado desarrollado para control de stock y ventas. Contenido administrable de forma dinámica. Zona privada. Carrito. Tipos de envío. Medios de pago. Integración con Mercado Pago. Actualización masiva de productos mediante excel. Generación de archivos xml para integración con Electrobase."
+                        descripcion="
+                        <ul>
+                            <li>Tipo: e-commerce.</li>
+                            <li>Sincronización automática de productos y pedidos con sistema externo.</li>
+                            <li>Definición dinámica de campos y variantes asociados a productos.</li>
+                            <li>Administrador de contenido con roles de usuarios.</li>
+                            <li>Zona privada.</li>
+                            <li>Carrito de compras.</li>
+                        </ul>"
+                        estado="Desplegado"
                         link="https://buloneskc.osole.com.ar"
-                        :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','mysql', 'mp']"
+                        :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','mysql']"
                         :vista="vista"
                         fecha='2024'
                         :filtro="filtro"
@@ -92,7 +137,16 @@
                     <AppProyecto @viewProject="viewProject"
                         nombre="Casa Perez"
                         imagen="imagenes/casaperez.png"
-                        descripcion="E-commerce personalizado desarrollado para control de stock y ventas. Contenido administrable de forma dinámica. Zona privada. Carrito. Tipos de envío. Medios de pago. Integración con Mercado Pago. Actualización masiva de productos mediante excel. Generación de archivos xml para integración con Electrobase."
+                        descripcion="
+                        <ul>
+                            <li>Tipo: e-commerce.</li>
+                            <li>Generación de archivos xml para integración con Electrobase.</li>
+                            <li>Administrador de contenido con roles de usuarios.</li>
+                            <li>Zona privada.</li>
+                            <li>Actualización masiva de productos y clientes mediante excel.</li>
+                            <li>Carrito de compras público y privado.</li>
+                        </ul>"
+                        estado="En desarrollo"
                         link=""
                         :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','mysql', 'mp']"
                         :vista="vista"
@@ -104,7 +158,15 @@
                     <AppProyecto @viewProject="viewProject"
                         nombre="PMR Industria"
                         imagen="imagenes/pmr.png"
-                        descripcion="Página web con contenido gestionable de forma dinámica. Imágenes, videos, contacto y solicitudes de presupuesto."
+                        descripcion="
+                        <ul>
+                            <li>Tipo: sitio web.</li>
+                            <li>Administrador de contenido con roles de usuarios.</li>
+                            <li>Formularios de contacto.</li>
+                            <li>Newsletter.</li>
+                            <li>Solicitud de presupuesto</li>
+                        </ul>"
+                        estado="Desplegado"
                         link="https://pmr.com.ar/"
                         :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','mysql']"
                         :vista="vista"
@@ -116,7 +178,14 @@
                     <AppProyecto @viewProject="viewProject"
                         nombre="Andes Elevadores"
                         imagen="imagenes/andes.png"
-                        descripcion="Página web con contenido gestionable de forma dinámica. Imágenes, videos, contacto y solicitudes de presupuesto."
+                        descripcion="<ul>
+                            <li>Tipo: sitio web.</li>
+                            <li>Administrador de contenido con roles de usuarios.</li>
+                            <li>Formularios de contacto.</li>
+                            <li>Newsletter.</li>
+                            <li>Solicitud de presupuesto</li>
+                        </ul>"
+                        estado="Desplegado"
                         link="https://www.andeselevadores.com.ar/"
                         :tecnologias="['laravel', 'php', 'javascript','html','css','bootstrap','mysql']"
                         :vista="vista"
@@ -128,7 +197,15 @@
                     <AppProyecto @viewProject="viewProject"
                         nombre="Cripto Trading Bot"
                         imagen="imagenes/tradingbot.jpg"
-                        descripcion="sd"
+                        descripcion="
+                        <ul>
+                            <li>Tipo: bot.</li>
+                            <li>Trading bot para criptomonedas.</li>
+                            <li>Integración con Binance API.</li>
+                            <li>Compra y venta automática.</li>
+                            <li>Backtesting.</li>
+                            <li>Integración con Telegram Bot. Notificación de estado de cuenta y trades.</li>
+                        </ul>"
                         link="https://github.com/julianlora/trading-bot.git"
                         :tecnologias="['python']"
                         :vista="vista"
@@ -140,7 +217,16 @@
                     <AppProyecto @viewProject="viewProject"
                         nombre="TaskIt - Gestión de tareas"
                         imagen="imagenes/taskit.jpg"
-                        descripcion="sd"
+                        descripcion="
+                        <ul>
+                            <li>Tipo: aplicación web.</li>
+                            <li>Login de usuario.</li>
+                            <li>Creación de listas de tareas.</li>
+                            <li>Colaboración entre usuarios para listas compartidas.</li>
+                            <li>Roles de administrador, colaborador y solo lectura.</li>
+                            <li>Suscripción con integración de Mercado Pago.</li>
+                            <li>Funcionalidades premium.</li>
+                        </ul>"
                         link="https://github.com/julianlora/TaskIt.git"
                         :tecnologias="['php','javascript','html','css','mysql', 'mp']"
                         :vista="vista"
@@ -152,7 +238,11 @@
                     <AppProyecto @viewProject="viewProject"
                         nombre="Final Space website"
                         imagen="imagenes/finalspace.jpg"
-                        descripcion="sd"
+                        descripcion="<ul>
+                            <li>Tipo: sitio web.</li>
+                            <li>Galeria de imágenes.</li>
+                            <li>Diseño responsive.</li>
+                        </ul>"
                         link="https://julianlora.github.io/laboratorio3/index.html"
                         :tecnologias="['javascript','html','css']"
                         :vista="vista"
@@ -164,7 +254,11 @@
                     <AppProyecto @viewProject="viewProject"
                         nombre="Task Manager"
                         imagen="imagenes/taskmanager.jpg"
-                        descripcion="sd"
+                        descripcion="<ul>
+                            <li>Tipo: aplicación web.</li>
+                            <li>Creación de listas de tareas</li>
+                            <li>Sublistas y subtareas</li>
+                        </ul>"
                         link="https://julianlora.github.io/task-manager/"
                         :tecnologias="['javascript','html','css']"
                         :vista="vista"
@@ -176,7 +270,11 @@
                     <AppProyecto @viewProject="viewProject"
                         nombre="Ocho reinas"
                         imagen="imagenes/ochoreinas.jpg"
-                        descripcion="sd"
+                        descripcion="
+                        <ul>
+                            <li>Tipo: programa.</li>
+                            <li>Solución programática para dilema matemático: ¿es posible posicionar ocho reinas en un tablero de ajedrez sin que ninguna sea comida por otra?</li>
+                        </ul>"
                         link="https://github.com/julianlora/eight-queens.git"
                         :tecnologias="['c++']"
                         :vista="vista"
@@ -324,7 +422,7 @@ export default {
         }
         
         // SKILL COUNT
-        const proyectos = document.querySelectorAll('.proyecto');
+        const proyectos = document.querySelectorAll('.m-proyecto');
         const proyectosArray = Array.from(proyectos)
         const skills = document.querySelectorAll('.skills span');
         skills.forEach((skill) => {
@@ -445,6 +543,7 @@ export default {
 
 .proyecto-cont{
     padding: 20px 25px 0px 35px;
+    background-color: #f7f7f7;
 }
 
 .proyectos{
