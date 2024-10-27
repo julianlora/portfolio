@@ -113,4 +113,10 @@ methods:{
 .redes a:hover{
     color: #000;
 }
+
+@media (max-width: 768px){
+    .profile-cont{
+        display: none;
+    }
+}
 </style>

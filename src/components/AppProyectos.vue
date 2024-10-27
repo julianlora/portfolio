@@ -1,5 +1,5 @@
 <template>
-    <div style="padding-left: 230px;">
+    <div id='wrapper'>
         <!-- PROYECTOS -->
         <div class="proyecto-cont">
             <div class='seccion-titulo d-flex justify-content-between'>
@@ -28,6 +28,50 @@
             
             <div id="scrollable" >
                 <div class="proyectos row" :key="refresh" data-aos='fade-up'>
+
+                    <AppProyecto @viewProject="viewProject"
+                        nombre="Ópticas LAM"
+                        imagen="imagenes/gufra.png"
+                        descripcion="
+                        <ul>
+                            <li>Tipo: sistema de producción.</li>
+                            <li>Administrador de contenido con roles de usuarios.</li>
+                            <li>Zona privada.</li>
+                            <li>Carrito de compras.</li>
+                            <li>Categorías y subcategorias</li>
+                            <li>Actualización masiva de productos y clientes mediante excel.</li>
+                            <li>Lista de precios mayorista y minorista.</li>
+                        </ul>"
+                        estado="En desarrollo"
+                        link="https://gufra.com.ar"
+                        :tecnologias="['vue', 'laravel', 'php', 'javascript','html','css','tailwind','mysql']"
+                        :vista="vista"
+                        fecha='2024'
+                        :filtro="filtro"
+                        >
+                    </AppProyecto>
+
+                    <AppProyecto @viewProject="viewProject"
+                        nombre="Plásticos Castro"
+                        imagen="imagenes/gufra.png"
+                        descripcion="
+                        <ul>
+                            <li>Tipo: sistema de producción.</li>
+                            <li>Administrador de contenido con roles de usuarios.</li>
+                            <li>Zona privada.</li>
+                            <li>Carrito de compras.</li>
+                            <li>Categorías y subcategorias</li>
+                            <li>Actualización masiva de productos y clientes mediante excel.</li>
+                            <li>Lista de precios mayorista y minorista.</li>
+                        </ul>"
+                        estado="En desarrollo"
+                        link="https://gufra.com.ar"
+                        :tecnologias="['vue', 'laravel', 'php', 'javascript','html','css','tailwind','mysql']"
+                        :vista="vista"
+                        fecha='2024'
+                        :filtro="filtro"
+                        >
+                    </AppProyecto>
 
                     <AppProyecto @viewProject="viewProject"
                         nombre="Gufra"
@@ -508,9 +552,17 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
+#wrapper{
+    padding-left: 230px;
+}
 
 .skills{
     padding-bottom: 20px;
+    overflow-x: scroll;
+}
+
+.skills::-webkit-scrollbar {
+    display: none;
 }
 
 .skills span{
@@ -523,6 +575,7 @@ export default {
     cursor: pointer;
     transition: all 0.2s;
     font-size: 14px;
+    white-space: nowrap;
 }
 
 .skills span:hover{
@@ -575,5 +628,16 @@ export default {
     margin-left: 0 !important;
 }
 
+@media (max-width: 768px){
+    #wrapper{
+        padding-left: 0;
+    }
+    .proyectos{
+        /* border:1px solid red; */
+        max-height: calc(100vh - 300px);
+        /* overflow-y: scroll; */
+        padding-right: 20px;
+    }
+}
 
 </style>

@@ -18,8 +18,11 @@
                     </div>
                     
                     <div class='iconos'>
+                        
+                        <div v-if="tecnologias.includes('vue')"><i class="fa-brands fa-vuejs fa-xl"></i></div>
                         <div v-if="tecnologias.includes('python')"><i class="fa-brands fa-python fa-xl"></i></div>
                         <div v-if="tecnologias.includes('laravel')"><i class="fa-brands fa-laravel fa-xl"></i></div>
+                        <div v-if="tecnologias.includes('tailwind')"><img src="imagenes/tailwind.png" alt="" style="height: 32px;"></div>
                         <div v-if="tecnologias.includes('php')"><i class="fa-brands fa-php fa-xl"></i></div>
                         <div v-if="tecnologias.includes('javascript')"><i class="fa-brands fa-js fa-xl"></i></div>
                         <div v-if="tecnologias.includes('html')"><i class="fa-brands fa-html5 fa-xl"></i></div>
@@ -46,7 +49,7 @@
         </div>
     </div>
 
-    <div :id="id" v-if="vista==='mosaic' && (!filtro || tecnologias.includes(filtro))" class='m-proyecto col-3' :data-fecha='fecha' :data-skills="tecnologias.join(' ')">
+    <div :id="id" v-if="vista==='mosaic' && (!filtro || tecnologias.includes(filtro))" class='m-proyecto col-lg-6 col-xl-4 col-xxl-3' :data-fecha='fecha' :data-skills="tecnologias.join(' ')">
         <div class='m-proyecto-margin'>
             <div class='m-portada' :style="{ backgroundImage: `url(${imagen})` }">
 
@@ -209,6 +212,7 @@ export default {
 .iconos{
     display: flex;
     margin-top: 5px;
+    align-items: center;
     /* margin-bottom: 20px; */
 }
 
@@ -221,9 +225,9 @@ export default {
     padding-top: 10px;
 }
 
-.proyecto-imagenes{
-    /* width: 100%; */
-}
+/* .proyecto-imagenes{
+    width: 100%;
+} */
 
 .proyecto-img{
     background-position:top; 

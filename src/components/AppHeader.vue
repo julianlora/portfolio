@@ -1,70 +1,61 @@
 <template>
-    <header class='container-fluid border border-2'>
-        <!-- NAV -->
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <button @click="about" class="nav-link" aria-current="page" href="#">Sobre mí</button>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown link
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-        </nav>
+    <header class='container-fluid border border-2 d-flex justify-content-center'>
+      <div>
+        <div class="d-flex w-100 justify-content-center">
+          <div id='m-profile-img'></div>
+        </div>
+        
+        <button @click="mabout" class='m-about-btn' data-alt='<i class="fa-solid fa-arrow-left"></i> Mis proyectos'>Sobre mí</button>
+      </div>
     </header>
-  </template>
-  
-  <script>
-  export default {
-    name: 'AppHeader',
-    methods: {
-      active(event) {
-        const navItem = event.currentTarget.closest('.nav-item');
-        if (navItem) {
-          document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
-          navItem.classList.add('active');
-        }
-      },
-      about(event){
-        console.log('about')
-        document.querySelector('.profile-cont').classList.toggle('expanded')
-        this.active(event);
-      }
+</template>
+
+<script>
+export default {
+  name: 'AppHeader',
+  methods: {
+    mabout(event){
+      document.querySelector('header').classList.toggle('open')
     }
   }
-  </script>
-  
-  <!-- Add "scoped" attribute to limit CSS to this component only -->
-  <style scoped>
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+header{
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  height: 125px;
+}
+#m-profile-img{
+  width: 60px;
+  height: 60px;
+  background-image: url(../assets/photo_4927435955602828172_x.jpg);
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.m-about-btn{
+    background-color: #000;
+    color: #fff;
+    width: 120px;
+    height: 35px;
+    transition: all 0.3s;
+    border-radius: 8px;
+}
+.open{
+  height: 100vh;
+}
+@media (min-width: 768px){
   header{
-    position: fixed;
-    z-index: 1;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    display: none !important;
   }
-  .active .nav-link{
-    color: rgba(0, 0, 0, 1) !important;
-    font-weight: 500;
-  }
-  </style>
+}
+</style>
   

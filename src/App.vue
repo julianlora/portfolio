@@ -1,4 +1,5 @@
 <template>
+  
   <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   <!-- <AppHeader></AppHeader> -->
   <main>
@@ -9,12 +10,14 @@
     
 
   </main>
+  <AppHeader></AppHeader>
 </template>
 
 <script>
 // import AppHeader from './components/AppHeader.vue';
 import AppProfile from './components/AppProfile.vue';
 import AppProyectos from './components/AppProyectos.vue';
+import AppHeader from './components/AppHeader.vue';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -26,7 +29,7 @@ export default {
   },
   components: {
     // HelloWorld,
-    // AppHeader,
+    AppHeader,
     AppProfile,
     AppProyectos,
   }
