@@ -14,7 +14,7 @@
 export default {
   name: 'AppHeader',
   methods: {
-    mabout(event){
+    mabout(){
       document.querySelector('header').classList.toggle('open')
     }
   }
