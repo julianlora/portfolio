@@ -9,16 +9,19 @@
             <a href="https://www.linkedin.com/in/julian-lora/" target="_blank"><i class="fa-brands fa-linkedin fa-xl"></i></a>
             <a href="https://wa.me/+541131560155" target="_blank"><i class="fa-brands fa-whatsapp fa-xl"></i></a>
         </div>
-        <button @click="about" class='about-btn' data-alt='<i class="fa-solid fa-arrow-left"></i> Mis proyectos'>Sobre mí <i class="fa-solid fa-arrow-right"></i></button>
         <div id='info'>
             <div>
-                Soy un apasionado programador con experiencia en desarrollo web, donde he contribuido a la creación y
- mantenimiento de aplicaciones dinámicas y eficientes. He demostrado habilidades en backend y
- frontend, trabajando en estrecha colaboración con clientes y equipos de diseño para ofrecer soluciones
+                Desarrollador Full Stack especializado en el desarrollo de soluciones web integrales.
+De la mano del trabajo riguroso y comprometido he generado sistemas de negocio que proveen valor al trabajo de numerosas empresas, impactando procesos vitales que involucran miles de clientes y empleados. La estrecha colaboración con clientes y equipos de diseño garantizan soluciones eficientes y
  personalizadas. Me caracterizo por mi proactividad, capacidad de liderazgo y compromiso con la mejora
  continua.
             </div>
         </div>
+        <div class='btns text-center'>
+            <button @click="about" class='about-btn' data-alt='<i class="fa-solid fa-arrow-left"></i> Mis proyectos'>Sobre mí <i class="fa-solid fa-arrow-right"></i></button>
+            <a target="_blank" download="Julián Lora CV" href="/archivos/spa.pdf"><button class='about-btn' >Descargar CV</button></a>
+        </div>
+        
     </div>
 </div>
 </template>
@@ -34,7 +37,6 @@ methods:{
         let alt = btn.getAttribute('data-alt')
         btn.setAttribute('data-alt', btn.innerHTML)
         btn.innerHTML = alt
-        
       }
 }
 }
@@ -51,6 +53,15 @@ methods:{
     transition: width 0.5s;
     background-color: #fff;
     z-index: 2;
+}
+
+.expanded .btns{
+    display: flex;
+}
+
+.expanded .btns button{
+    margin-right: 8px;
+    margin-left: 8px;
 }
 
 #profile{

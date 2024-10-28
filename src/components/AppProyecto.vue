@@ -260,4 +260,9 @@ export default {
     mask-position: 120%;
     opacity: 1;
 }
+@media (max-width: 768px){
+    .m-proyecto{
+        padding-right: 0 !important;
+    }
+}
 </style>

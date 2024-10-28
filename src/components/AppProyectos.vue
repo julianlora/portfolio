@@ -11,9 +11,11 @@
             </div>
 
             <div class="skills" data-aos='fade-left'>
+                <span @click="filterSkill($event, 'vue')">Vue</span>
                 <span @click="filterSkill($event, 'php')">PHP</span>
                 <span @click="filterSkill($event, 'laravel')">Laravel</span>
                 <span @click="filterSkill($event, 'javascript')">JavaScript</span>
+                <span @click="filterSkill($event, 'tailwind')">Tailwind</span>
                 <!-- <span @click="filterSkill($event, 'jquery')">JQuery</span> -->
                 <!-- <span @click="filterSkill($event, 'ajax')">Ajax</span> -->
                 <span @click="filterSkill($event, 'mysql')">MySQL</span>
@@ -31,19 +33,20 @@
 
                     <AppProyecto @viewProject="viewProject"
                         nombre="Ópticas LAM"
-                        imagen="imagenes/gufra.png"
+                        imagen="imagenes/opticas.jpg"
                         descripcion="
                         <ul>
                             <li>Tipo: sistema de producción.</li>
-                            <li>Administrador de contenido con roles de usuarios.</li>
-                            <li>Zona privada.</li>
-                            <li>Carrito de compras.</li>
-                            <li>Categorías y subcategorias</li>
-                            <li>Actualización masiva de productos y clientes mediante excel.</li>
-                            <li>Lista de precios mayorista y minorista.</li>
+                            <li>Adminstración de pedidos de múltiples fuentes.</li>
+                            <li>Generación de ruta de recolección.</li>
+                            <li>Impresión de etiquetas y generación de remitos.</li>
+                            <li>Control de stock.</li>
+                            <li>Registro de operarios.</li>
+                            <li>Estadísticas de logística.</li>
+                            <li>Gestión de preparación y despachos.</li>
                         </ul>"
                         estado="En desarrollo"
-                        link="https://gufra.com.ar"
+                        link=""
                         :tecnologias="['vue', 'laravel', 'php', 'javascript','html','css','tailwind','mysql']"
                         :vista="vista"
                         fecha='2024'
@@ -53,19 +56,18 @@
 
                     <AppProyecto @viewProject="viewProject"
                         nombre="Plásticos Castro"
-                        imagen="imagenes/gufra.png"
+                        imagen="imagenes/plasticos.jpg"
                         descripcion="
                         <ul>
                             <li>Tipo: sistema de producción.</li>
-                            <li>Administrador de contenido con roles de usuarios.</li>
-                            <li>Zona privada.</li>
-                            <li>Carrito de compras.</li>
-                            <li>Categorías y subcategorias</li>
-                            <li>Actualización masiva de productos y clientes mediante excel.</li>
-                            <li>Lista de precios mayorista y minorista.</li>
+                            <li>Asignación de máquinas y plantas de producción.</li>
+                            <li>Control de stock a través de múltiples depósitos y procesos.</li>
+                            <li>Gestión de turnos.</li>
+                            <li>Registro de inventarios.</li>
+                            <li>Administración de pedidos.</li>
                         </ul>"
                         estado="En desarrollo"
-                        link="https://gufra.com.ar"
+                        link=""
                         :tecnologias="['vue', 'laravel', 'php', 'javascript','html','css','tailwind','mysql']"
                         :vista="vista"
                         fecha='2024'

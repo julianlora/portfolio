@@ -14,8 +14,9 @@
 export default {
   name: 'AppHeader',
   methods: {
-    mabout(){
+    mabout(event){
       document.querySelector('header').classList.toggle('open')
+      event.target.innerHTML = event.target.innerHTML === 'Sobre mí' ? 'Mis proyectos' : 'Sobre mí'
     }
   }
 }
@@ -29,6 +30,8 @@ header{
   z-index: 1;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
   height: 125px;
+  transition: height 0.3s;
+  background-color: #fff;
 }
 #m-profile-img{
   width: 60px;
@@ -48,6 +51,7 @@ header{
     height: 35px;
     transition: all 0.3s;
     border-radius: 8px;
+    font-size: 15px;
 }
 .open{
   height: 100vh;
