@@ -12,7 +12,7 @@
         <div id='info'>
             <div>
                 Desarrollador Full Stack especializado en el desarrollo de soluciones web integrales.
-De la mano del trabajo riguroso y comprometido he generado sistemas de negocio que proveen valor al trabajo de numerosas empresas, impactando procesos vitales que involucran miles de clientes y empleados. La estrecha colaboración con clientes y equipos de diseño garantizan soluciones eficientes y
+De la mano del trabajo riguroso y comprometido me dedico a generar sistemas de negocio que proveen valor al trabajo de numerosas empresas, impactando procesos vitales que involucran miles de clientes y empleados. La estrecha colaboración con clientes y equipos de diseño garantizan soluciones eficientes y
  personalizadas. Me caracterizo por mi proactividad, capacidad de liderazgo y compromiso con la mejora
  continua.
             </div>
