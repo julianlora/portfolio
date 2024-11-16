@@ -19,7 +19,7 @@ De la mano del trabajo riguroso y comprometido me dedico a generar sistemas de n
         </div>
         <div class='btns text-center'>
             <button @click="about" class='about-btn' data-alt='<i class="fa-solid fa-arrow-left"></i> Mis proyectos'>Sobre mí <i class="fa-solid fa-arrow-right"></i></button>
-            <a target="_blank" download="Julián Lora CV" href="/archivos/spa.pdf"><button class='about-btn' >Descargar CV</button></a>
+            <a target="_blank" download="Julián Lora CV" :href="baseURL+'/archivos/spa.pdf'"><button class='about-btn' >Descargar CV</button></a>
         </div>
         
     </div>
@@ -29,6 +29,11 @@ De la mano del trabajo riguroso y comprometido me dedico a generar sistemas de n
 <script>
 export default {
 name: 'AppProfile',
+data() {
+        return {
+            baseURL : window.location.origin
+        }
+    },
 methods:{
     about(){
         const element = document.querySelector('.profile-cont')
